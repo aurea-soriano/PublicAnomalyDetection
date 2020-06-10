@@ -7,18 +7,18 @@ import utils
 from lstm_autoencoder import LSTM_Autoencoder
 from models import LSTMAutoEncoder
 
-#Global Temperature Time Series
-df = pd.read_csv("monthly_csv.csv")
+#Beer Production in Australia
+df = pd.read_csv("beer_production_australia.csv")
 print(df.head(5))
 
-var_name = "Mean"
+var_name = "production"
 # Visualise data
 plt.title("Dataset:")
 plt.plot(df[var_name])
 plt.show()
 
 # Use green area as training data (non-anomalous)
-start, end = 500, 5000
+start, end = 50, 100
 plt.title("Non-anomalous data (green segment) used as training data")
 plt.plot(df[var_name])
 plt.plot(df[var_name][start:end], c='g')
